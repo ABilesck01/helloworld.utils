@@ -4,6 +4,9 @@
   "displayName": "Hello World Utils",
   "description": "Hello World Utils for any project",
   "unity": "2019.1",
+  "dependencies": {
+    "com.unity.textmeshpro": "3.0.9"
+ },
  "keywords": [
     "keyword1",
     "keyword2",
@@ -15,4 +18,3 @@
     "url": "https://www.unity3d.com"
   }
 }
-
