@@ -1,0 +1,18 @@
+{
+  "name": "com.helloworld.utils",
+  "version": "1.0.0",
+  "displayName": "Hello World Utils",
+  "description": "Hello World Utils for any project",
+  "unity": "2019.1",
+ "keywords": [
+    "keyword1",
+    "keyword2",
+    "keyword3"
+  ],
+  "author": {
+    "name": "Alex Pontes",
+    "email": "alex.pontes@helloworldstudio.com.br",
+    "url": "https://www.unity3d.com"
+  }
+}
+
