@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using AYellowpaper.SerializedCollections;
 using UnityEngine;
 
 namespace helloworld.utils
@@ -8,17 +7,40 @@ namespace helloworld.utils
     {
         [SerializeField] protected Stats stats;
 
-        private Dictionary<Stat, float> instanceStats = new Dictionary<Stat, float>();
+        protected SerializedDictionary<Stat, float> instanceStats = new SerializedDictionary<Stat, float>();
 
         protected virtual void Awake()
         {
-            instanceStats = new Dictionary<Stat, float>(stats.instanceStats);
+            stats = Instantiate(stats);
+
+            instanceStats = new SerializedDictionary<Stat, float>(stats.instanceStats);
             stats.OnApplyModifier += OnStatsModified;
         }
 
         protected virtual void OnDestroy()
         {
             stats.OnApplyModifier -= OnStatsModified;
+            stats.Reset();
+        }
+
+        public void AddModfier(Modifier modifier)
+        {
+            if (modifier == null)
+            {
+                Debug.LogWarning("Attempted to add a null modifier.");
+                return;
+            }
+            stats.UnlockUpgrade(modifier);
+        }
+
+        public void RemoveModifier(Modifier modifier)
+        {
+            if (modifier == null)
+            {
+                Debug.LogWarning("Attempted to remove a null modifier.");
+                return;
+            }
+
         }
 
         private void OnStatsModified(Stats source, Modifier modifier)
@@ -35,6 +57,16 @@ namespace helloworld.utils
                     instanceStats.Add(stat, newValue);
                 }
             }
+        }
+
+        protected float GetInstanceStat(Stat stat)
+        {
+            if (instanceStats.TryGetValue(stat, out float value))
+            {
+                return value;
+            }
+            Debug.LogWarning($"Stat {stat} not found in instance stats dictionary.");
+            return 0f; // ou algum valor padrão
         }
     }
 }

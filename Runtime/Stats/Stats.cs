@@ -38,21 +38,31 @@ namespace helloworld.utils
 
         public void UnlockUpgrade(Modifier modifier)
         {
-            if(!modifiers.Contains(modifier))
+            if (!modifiers.Contains(modifier))
             {
                 modifiers.Add(modifier);
                 OnApplyModifier?.Invoke(this, modifier);
             }
         }
 
+        public void RemoveUpgrade(Modifier modifier)
+        {
+            if (!modifiers.Contains(modifier))
+            {
+                return;
+            }
+
+            modifiers.Remove(modifier);
+        }
+
         private float GetUpgradedValue(Stat stat, float baseValue)
         {
             foreach (var modifier in modifiers)
             {
-                if(!modifier.statsToModify.TryGetValue(stat, out float modifierValue))
+                if (!modifier.statsToModify.TryGetValue(stat, out float modifierValue))
                     continue;
 
-                if(modifier.isPercentageModifier)
+                if (modifier.isPercentageModifier)
                     baseValue *= (modifierValue / 100f) + 1f;
                 else
                     baseValue += modifierValue;
@@ -69,7 +79,9 @@ namespace helloworld.utils
     public enum Stat
     {
         Health,
-        Speed
+        Speed,
+        JumpHeight,
+        Damage,
     }
 
 }
