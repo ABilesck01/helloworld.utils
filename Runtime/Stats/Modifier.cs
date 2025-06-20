@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace helloworld.utils
+namespace HelloWorld.Utils
 {
     public class Modifier : ScriptableObject
     {

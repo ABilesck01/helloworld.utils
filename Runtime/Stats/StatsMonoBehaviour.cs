@@ -1,7 +1,7 @@
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
 
-namespace helloworld.utils
+namespace HelloWorld.Utils
 {
     public class StatsMonoBehaviour : MonoBehaviour
     {

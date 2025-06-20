@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace helloworld.utils
+namespace HelloWorld.Utils
 {
     public class Stats : ScriptableObject
     {
