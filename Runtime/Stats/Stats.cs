@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace HelloWorld.Utils
 {
+    [CreateAssetMenu(menuName ="Hello World/Utils/New Stats")]
     public class Stats : ScriptableObject
     {
         public SerializedDictionary<Stat, float> stats = new SerializedDictionary<Stat, float>();
