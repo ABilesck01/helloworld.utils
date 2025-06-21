@@ -15,3 +15,9 @@
 
 - Add stats system
 - Add pause system
+
+## [1.1.1] - 2025-06-21
+
+### Stats Update
+
+- Stats are now a separated component

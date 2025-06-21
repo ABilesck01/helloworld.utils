@@ -7,7 +7,6 @@ namespace HelloWorld.Utils
 {
     public class Stats : ScriptableObject
     {
-        public SerializedDictionary<Stat, float> instanceStats = new SerializedDictionary<Stat, float>();
         public SerializedDictionary<Stat, float> stats = new SerializedDictionary<Stat, float>();
         private List<Modifier> modifiers = new List<Modifier>();
 
@@ -15,8 +14,6 @@ namespace HelloWorld.Utils
 
         public float GetStat(Stat stat)
         {
-            if (instanceStats.TryGetValue(stat, out float instanceValue))
-                return GetUpgradedValue(stat, instanceValue);
             if (stats.TryGetValue(stat, out float value))
                 return GetUpgradedValue(stat, value);
 
