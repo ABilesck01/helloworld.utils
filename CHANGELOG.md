@@ -21,3 +21,9 @@
 ### Stats Update
 
 - Stats are now a separated component
+
+## [1.2.0] - 2025-06-02
+
+### bad words Update
+
+- now it has a bad words filter
