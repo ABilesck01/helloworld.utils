@@ -72,6 +72,11 @@ namespace HelloWorld.Utils
         {
             modifiers.Clear();
         }
+
+        public bool HasModifier(Modifier modifier)
+        {
+            return modifiers.Contains(modifier);
+        }
     }
 
     public enum Stat

@@ -36,10 +36,14 @@ namespace HelloWorld.Utils
             }
 
         }
-
-        protected float GetInstanceStat(Stat stat)
+        public float GetInstanceStat(Stat stat)
         {
             return stats.GetStat(stat);
+        }
+
+        public bool HasModifier(Modifier modifier)
+        {
+            return stats.HasModifier(modifier);
         }
     }
 }

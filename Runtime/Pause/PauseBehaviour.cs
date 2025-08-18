@@ -10,6 +10,8 @@ namespace HelloWorld.Utils
         public Action OnGame;
         public Action OnPause;
 
+        public bool IsPaused => PauseManager.Instance.currentPauseState != PauseManager.PauseState.Game;
+
         private void OnEnable()
         {
             PauseManager.OnGameStateChanged += HandlePauseStateChanged;
