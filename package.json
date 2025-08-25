@@ -1,17 +1,12 @@
 {
   "name": "com.helloworld.utils",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "displayName": "Hello World Utils",
   "description": "Hello World Utils for any project",
   "unity": "2019.1",
   "dependencies": {
     "com.unity.textmeshpro": "3.0.9"
  },
- "keywords": [
-    "keyword1",
-    "keyword2",
-    "keyword3"
-  ],
   "author": {
     "name": "Alex Pontes",
     "email": "alex.pontes@helloworldstudio.com.br",

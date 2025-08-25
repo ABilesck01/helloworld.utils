@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using AYellowpaper.SerializedCollections;
 using UnityEngine;
 
 namespace HelloWorld.Utils
@@ -11,17 +10,9 @@ namespace HelloWorld.Utils
         public string description;
         public int cost = 0;
         [Space]
-        public List<Stats> unitsToUpgrade = new List<Stats>();
-        public Dictionary<Stat, float> statsToModify = new Dictionary<Stat, float>();
+        public SerializedDictionary<Stat, float> statsToModify = new SerializedDictionary<Stat, float>();
         public bool isPercentageModifier = false;
 
-        public void DoUpgrade()
-        {
-            foreach (var item in unitsToUpgrade)
-            {
-                item.UnlockUpgrade(this);
-            }
-        }
 
     }
 }
